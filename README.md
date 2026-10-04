@@ -1,4 +1,4 @@
-# Atlas Energy on GitHub
+# Atlas Energy
 
 Atlas Energy is an independent academic project for exploring Morocco's electricity-transition choices. It combines public-source ingestion, documented model assumptions, hourly optimization, and a browser-based scenario dashboard to support transparent energy-system analysis.
 
