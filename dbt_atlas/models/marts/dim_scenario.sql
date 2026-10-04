@@ -1,0 +1,28 @@
+select
+    r.run_id,
+    r.scenario_id,
+    r.optimizer_scenario_id,
+    r.scenario_name,
+    r.planning_year,
+    r.weather_year,
+    r.run_mode,
+    r.calendar_mode,
+    r.model_version,
+    r.engine_version,
+    r.config_version,
+    r.input_package_version,
+    r.solver_name,
+    r.solver_version,
+    r.publication_state,
+    r.is_current,
+    r.generated_at,
+    r.published_at,
+    i.demand_growth,
+    i.gas_price_eur_mwh_th,
+    i.carbon_price_eur_t,
+    i.renewable_generation_min,
+    i.battery_capex_multiplier,
+    i.solar_capex_multiplier,
+    i.wind_capex_multiplier
+from {{ ref('stg_runs') }} as r
+left join {{ ref('stg_scenario_inputs') }} as i using (run_id)

@@ -1,0 +1,46 @@
+version: 1
+minimum_embedded_text_characters: 40
+energy_keywords:
+  - electricite
+  - energie
+  - renouvelable
+  - solaire
+  - eolien
+  - hydraulique
+  - puissance
+  - production
+  - consommation
+  - hydrogene
+table_pages:
+  - source_id: anre
+    source_file: ANRE-Rapport-Annuel-2024-FR.pdf
+    page_number_pdf: 20
+    printed_page: 38-39
+  - source_id: onee
+    source_file: ONEE-Rapport-Activites-2024-FR.pdf
+    page_number_pdf: 17
+    printed_page: "16"
+metrics:
+  - {metric_id: anre_generation_total, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 20, printed_page: 38-39, metric_name: Production nationale totale, category: electricity_generation, value: 43713, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Totale production en 2024: 43 713 GWh"}
+  - {metric_id: anre_generation_coal, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 20, printed_page: 38-39, metric_name: Production charbon, category: electricity_generation_by_source, value: 26229, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Charbon: 26 229 GWh"}
+  - {metric_id: anre_generation_wind, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 20, printed_page: 38-39, metric_name: Production eolienne, category: electricity_generation_by_source, value: 9363, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Eolien: 9 363 GWh"}
+  - {metric_id: anre_generation_natural_gas, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 20, printed_page: 38-39, metric_name: Production gaz naturel, category: electricity_generation_by_source, value: 4333, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Gaz naturel: 4 333 GWh"}
+  - {metric_id: anre_generation_solar, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 20, printed_page: 38-39, metric_name: Production solaire, category: electricity_generation_by_source, value: 1617, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Solaire: 1 617 GWh"}
+  - {metric_id: anre_generation_fuel, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 20, printed_page: 38-39, metric_name: Production fioul et gasoil, category: electricity_generation_by_source, value: 1484, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Fioul et gasoil: 1 484 GWh"}
+  - {metric_id: anre_generation_hydro, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 20, printed_page: 38-39, metric_name: Production hydraulique, category: electricity_generation_by_source, value: 321, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Hydraulique: 321 GWh"}
+  - {metric_id: anre_generation_step, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 20, printed_page: 38-39, metric_name: Production STEP, category: electricity_generation_by_source, value: 365, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "STEP: 365 GWh"}
+  - {metric_id: anre_renewable_share_generation, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 20, printed_page: 38-39, metric_name: Part renouvelable de la production, category: electricity_generation_share, value: 27, unit: percent, period: "2024", geography: Morocco, qualifier: exact, evidence: "EnR: 27% de la production nationale"}
+  - {metric_id: anre_renewable_generation, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 23, printed_page: 44-45, metric_name: Production issue de sources renouvelables, category: renewable_generation, value: 11666, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Production renouvelable totale: 11 666 GWh"}
+  - {metric_id: anre_wind_installed_capacity, source_id: anre, source_file: ANRE-Rapport-Annuel-2024-FR.pdf, page_number_pdf: 23, printed_page: 44-45, metric_name: Capacite eolienne installee, category: installed_capacity, value: 2390, unit: MW, period: "2024", geography: Morocco, qualifier: exact, evidence: "La capacite installee de cette source a atteint 2 390 MW"}
+  - {metric_id: onee_installed_capacity, source_id: onee, source_file: ONEE-Rapport-Activites-2024-FR.pdf, page_number_pdf: 16, printed_page: "15", metric_name: Puissance installee nationale, category: installed_capacity, value: 12017, unit: MW, period: "2024", geography: Morocco, qualifier: exact, evidence: "La puissance installee a atteint 12 017 MW"}
+  - {metric_id: onee_net_energy_called, source_id: onee, source_file: ONEE-Rapport-Activites-2024-FR.pdf, page_number_pdf: 16, printed_page: "15", metric_name: Energie electrique totale appelee, category: electricity_demand, value: 45713.1, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "L'energie electrique totale appelee a atteint 45 713,1 GWh"}
+  - {metric_id: onee_transmission_lines, source_id: onee, source_file: ONEE-Rapport-Activites-2024-FR.pdf, page_number_pdf: 17, printed_page: "16", metric_name: Longueur totale des lignes THT-HT, category: transmission_network, value: 29806, unit: km, period: "2024", geography: Morocco, qualifier: exact, evidence: "Total 2024: 29 806 km"}
+  - {metric_id: onee_peak_power, source_id: onee, source_file: ONEE-Rapport-Activites-2024-FR.pdf, page_number_pdf: 17, printed_page: "16", metric_name: Puissance maximale appelee a la pointe, category: electricity_demand, value: 7580, unit: MW, period: "2024-07-25", geography: Morocco, qualifier: exact, evidence: "Puissance maximale appelee a la pointe: 7 580 MW"}
+  - {metric_id: onee_max_daily_energy, source_id: onee, source_file: ONEE-Rapport-Activites-2024-FR.pdf, page_number_pdf: 17, printed_page: "16", metric_name: Energie appelee maximale journaliere, category: electricity_demand, value: 158829, unit: MWh, period: "2024-07-25", geography: Morocco, qualifier: exact, evidence: "Energie appelee maximale journaliere: 158829 MWh"}
+  - {metric_id: onee_distributor_sales, source_id: onee, source_file: ONEE-Rapport-Activites-2024-FR.pdf, page_number_pdf: 10, printed_page: "9", metric_name: Ventes aux distributeurs, category: electricity_sales, value: 17480, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Ventes aux distributeurs: 17 480 GWh"}
+  - {metric_id: onee_direct_customer_sales, source_id: onee, source_file: ONEE-Rapport-Activites-2024-FR.pdf, page_number_pdf: 10, printed_page: "9", metric_name: Ventes aux clients directs Grands Comptes, category: electricity_sales, value: 2616, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Ventes aux clients directs: 2 616 GWh"}
+  - {metric_id: onee_distribution_sales, source_id: onee, source_file: ONEE-Rapport-Activites-2024-FR.pdf, page_number_pdf: 10, printed_page: "9", metric_name: Ventes distribution ONEE, category: electricity_sales, value: 15172, unit: GWh, period: "2024", geography: Morocco, qualifier: exact, evidence: "Ventes de distribution ONEE: 15 172 GWh"}
+  - {metric_id: mef_renewable_installed_capacity, source_id: mef, source_file: MEF-Rapport-Economique-Financier-PLF2025-FR.pdf, page_number_pdf: 93, printed_page: "80", metric_name: Capacite renouvelable installee, category: installed_capacity, value: 5304, unit: MW, period: "2024-08", geography: Morocco, qualifier: exact, evidence: "Capacite electrique installee renouvelable: 5.304 MW"}
+  - {metric_id: mef_renewable_capacity_share, source_id: mef, source_file: MEF-Rapport-Economique-Financier-PLF2025-FR.pdf, page_number_pdf: 93, printed_page: "80", metric_name: Part renouvelable de la puissance installee, category: installed_capacity_share, value: 44.3, unit: percent, period: "2024-08", geography: Morocco, qualifier: exact, evidence: "44,3% de la puissance electrique totale installee"}
+  - {metric_id: mef_wind_installed_capacity, source_id: mef, source_file: MEF-Rapport-Economique-Financier-PLF2025-FR.pdf, page_number_pdf: 93, printed_page: "80", metric_name: Capacite eolienne installee, category: installed_capacity, value: 1858, unit: MW, period: "2023", geography: Morocco, qualifier: exact, evidence: "Capacite installee d'electricite eolienne: 1.858 MW"}
+  - {metric_id: mef_hydro_installed_capacity, source_id: mef, source_file: MEF-Rapport-Economique-Financier-PLF2025-FR.pdf, page_number_pdf: 93, printed_page: "80", metric_name: Capacite hydroelectrique installee, category: installed_capacity, value: 1770, unit: MW, period: "2023", geography: Morocco, qualifier: exact, evidence: "Hydroelectricite: 1.770 MW"}

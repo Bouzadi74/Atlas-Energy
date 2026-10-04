@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: optimization
+    schema: optimization
+    tables:
+      - name: optimization_runs
+      - name: scenario_runs
+      - name: scenario_inputs
+      - name: run_artifacts
+      - name: capacity_results
+      - name: dispatch_hourly
+      - name: storage_hourly
+      - name: cost_components
+      - name: run_provenance

@@ -1,0 +1,16 @@
+name: High Renewables 2035
+planning_year: 2035
+weather_year: 2024
+demand_growth: 0.04
+gas_price_eur_mwh_th: 70.0
+carbon_price_eur_t: 75.0
+renewable_generation_min: 0.75
+battery_capex_multiplier: 0.80
+solar_capex_multiplier: 0.90
+wind_capex_multiplier: 0.90
+provenance:
+  classification: ASSUMPTION
+  version: "1.0"
+  note: >-
+    Academic policy-sensitivity scenario with higher demand, fuel, carbon, and renewable targets
+    plus lower renewable and battery capital costs. It is not an official forecast.

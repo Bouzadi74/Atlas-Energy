@@ -1,0 +1,22 @@
+version: 1
+source_id: technology_data
+name: PyPSA Technology Data
+publisher: PyPSA technology-data contributors
+category: technology
+landing_page: https://github.com/PyPSA/technology-data
+formats: [csv, xlsx, parquet, pdf]
+bronze_prefix: technology/pypsa_technology_data
+access:
+  mode: git_release
+  automated: true
+  authentication: none
+  notes: Pin an immutable release; preserve the separate licenses of upstream inputs.
+coverage:
+  geography: Generic assumptions with later Morocco-specific overrides
+  period: Model years 2020, 2030, 2040, and 2050
+  cadence: Review each project release
+license:
+  name: GPL-3.0 code; input data licenses vary
+  url: https://github.com/PyPSA/technology-data/blob/master/LICENSE.txt
+  attribution_required: true
+  usage: Record the pinned release and every upstream data license used.

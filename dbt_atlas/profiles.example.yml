@@ -1,0 +1,12 @@
+atlas:
+  target: local
+  outputs:
+    local:
+      type: postgres
+      host: "{{ env_var('ATLAS_DBT_HOST', 'localhost') }}"
+      port: "{{ env_var('ATLAS_DBT_PORT', '55432') | int }}"
+      user: "{{ env_var('ATLAS_DBT_USER', 'atlas') }}"
+      password: "{{ env_var('ATLAS_DBT_PASSWORD', 'atlas') }}"
+      dbname: "{{ env_var('ATLAS_DBT_DATABASE', 'atlas') }}"
+      schema: analytics
+      threads: 4

@@ -1,0 +1,22 @@
+version: 1
+source_id: irena
+name: IRENA Renewable Energy Statistics
+publisher: International Renewable Energy Agency
+category: statistics
+landing_page: https://www.irena.org/data
+formats: [csv, xlsx, xlsb, pdf]
+bronze_prefix: statistics/irena
+access:
+  mode: manual_assisted
+  automated: false
+  authentication: manual_terms
+  notes: Use official direct downloads where available; otherwise register an untouched inbox file.
+coverage:
+  geography: Global dataset filtered to Morocco in Silver
+  period: Full source history; Silver target 2010-2024
+  cadence: Quarterly availability check
+license:
+  name: IRENA publication and dataset terms
+  url: https://www.irena.org/about/terms-and-conditions
+  attribution_required: true
+  usage: Retain dataset-specific citation and terms with each object.

@@ -1,0 +1,22 @@
+version: 1
+source_id: world_bank
+name: World Bank Indicators API
+publisher: World Bank
+category: statistics
+landing_page: https://datahelpdesk.worldbank.org/knowledgebase/articles/889392
+formats: [json]
+bronze_prefix: statistics/world_bank
+access:
+  mode: api
+  automated: true
+  authentication: none
+  notes: Morocco annual indicator observations fetched by indicator code.
+coverage:
+  geography: Morocco (MAR)
+  period: 2010-2024
+  cadence: Monthly availability check
+license:
+  name: World Bank Dataset Terms of Use
+  url: https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets
+  attribution_required: true
+  usage: Observe the license attached to each individual indicator dataset.

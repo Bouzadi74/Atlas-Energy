@@ -1,0 +1,22 @@
+version: 1
+source_id: zenodo_morocco_technoeconomic
+name: Techno-economic dataset for long-term energy systems modelling in Morocco
+publisher: Amandine Caillard, Imperial College London
+category: technology
+landing_page: https://zenodo.org/records/10427703
+formats: [xlsx]
+bronze_prefix: technology/zenodo_morocco_technoeconomic
+access:
+  mode: direct_download
+  automated: true
+  authentication: none
+  notes: Open Zenodo record; pin version 1.0 and DOI 10.5281/zenodo.10427703.
+coverage:
+  geography: Morocco
+  period: Long-term energy-system assumptions published as version 1.0
+  cadence: Fixed published version; review new Zenodo versions before adoption
+license:
+  name: Creative Commons Attribution 4.0 International
+  url: https://creativecommons.org/licenses/by/4.0/
+  attribution_required: true
+  usage: Cite Amandine Caillard (2023) and DOI 10.5281/zenodo.10427703.

@@ -1,0 +1,167 @@
+version: 2
+
+models:
+  - name: stg_runs
+    description: Published optimizer run metadata and authoritative headline KPIs.
+    columns:
+      - name: run_id
+        data_tests: [not_null, unique]
+      - name: scenario_id
+        data_tests: [not_null]
+      - name: solver_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [ok]
+      - name: termination_condition
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [optimal]
+      - name: publication_state
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [published, superseded, withdrawn]
+
+  - name: stg_scenario_inputs
+    description: Typed and complete scenario assumptions for each optimizer run.
+    columns:
+      - name: run_id
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_runs')
+                field: run_id
+
+  - name: stg_capacity
+    description: Published installed-capacity results at run and asset grain.
+    columns:
+      - name: run_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_runs')
+                field: run_id
+      - name: asset
+        data_tests: [not_null]
+
+  - name: stg_dispatch
+    description: Hourly generator, import, and reliability-slack dispatch.
+    columns:
+      - name: run_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_runs')
+                field: run_id
+      - name: timestamp_utc
+        data_tests: [not_null]
+      - name: dispatch_mw
+        data_tests: [not_null]
+
+  - name: stg_storage
+    description: Hourly storage dispatch and state of charge.
+    columns:
+      - name: run_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_runs')
+                field: run_id
+      - name: timestamp_utc
+        data_tests: [not_null]
+      - name: state_of_charge_mwh
+        data_tests: [not_null]
+
+  - name: stg_costs
+    description: Asset-level capital and combined operating cost components.
+    columns:
+      - name: run_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_runs')
+                field: run_id
+      - name: component_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [capital, operating]
+
+  - name: dim_scenario
+    description: Scenario/run dimension with assumptions, versions, and publication lifecycle.
+    columns:
+      - name: run_id
+        data_tests: [not_null, unique]
+
+  - name: fct_scenario_kpi
+    description: Executive scenario KPIs recalculated from published hourly and cost facts.
+    columns:
+      - name: run_id
+        data_tests: [not_null, unique]
+      - name: renewable_generation_share
+        data_tests: [not_null]
+      - name: unserved_mwh
+        data_tests: [not_null]
+
+  - name: fct_capacity
+    description: Current published capacity portfolio by run and asset.
+    columns:
+      - name: run_id
+        data_tests: [not_null]
+      - name: optimized_capacity_mw
+        data_tests: [not_null]
+
+  - name: fct_dispatch_hourly
+    description: Current published hourly generator and import dispatch.
+    columns:
+      - name: run_id
+        data_tests: [not_null]
+      - name: timestamp_utc
+        data_tests: [not_null]
+
+  - name: fct_storage_hourly
+    description: Current published hourly storage operation and state of charge.
+    columns:
+      - name: run_id
+        data_tests: [not_null]
+      - name: timestamp_utc
+        data_tests: [not_null]
+
+  - name: fct_cost_breakdown
+    description: Current asset-level annual capital and operating cost breakdown.
+    columns:
+      - name: run_id
+        data_tests: [not_null]
+      - name: amount_eur
+        data_tests: [not_null]
+
+  - name: fct_scenario_comparison
+    description: Pairwise KPI deltas between current published scenarios.
+    columns:
+      - name: base_run_id
+        data_tests: [not_null]
+      - name: comparison_run_id
+        data_tests: [not_null]
+
+  - name: dim_run_provenance
+    description: Current published run lineage, validation, software, and output contracts.
+    columns:
+      - name: run_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_scenario')
+                field: run_id
+      - name: provenance_key
+        data_tests: [not_null]
+      - name: provenance_value
+        data_tests: [not_null]

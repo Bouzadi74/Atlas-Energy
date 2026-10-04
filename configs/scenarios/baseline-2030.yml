@@ -1,0 +1,16 @@
+name: Baseline 2030
+planning_year: 2030
+weather_year: 2024
+demand_growth: 0.03
+gas_price_eur_mwh_th: 65.0
+carbon_price_eur_t: 50.0
+renewable_generation_min: 0.50
+battery_capex_multiplier: 1.0
+solar_capex_multiplier: 1.0
+wind_capex_multiplier: 1.0
+provenance:
+  classification: ASSUMPTION
+  version: "1.0"
+  note: >-
+    Academic reference case for comparison across Atlas scenarios. Values are transparent modeling
+    assumptions rather than an official Moroccan forecast.

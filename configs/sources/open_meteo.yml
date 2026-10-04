@@ -1,0 +1,22 @@
+version: 1
+source_id: open_meteo
+name: Open-Meteo Historical Weather API
+publisher: Open-Meteo
+category: weather
+landing_page: https://open-meteo.com/en/docs/historical-weather-api
+formats: [json]
+bronze_prefix: weather/open_meteo
+access:
+  mode: api
+  automated: true
+  authentication: none
+  notes: Free non-commercial endpoint; use UTC and an explicit model.
+coverage:
+  geography: Eleven representative Moroccan energy zones
+  period: 2020-2024 acquired
+  cadence: Annual backfill, then yearly refresh
+license:
+  name: CC BY 4.0
+  url: https://open-meteo.com/en/licence
+  attribution_required: true
+  usage: Non-commercial academic use with Open-Meteo attribution.

@@ -1,0 +1,28 @@
+version: 1
+source_id: technology_data
+release: v0.15.0
+assets:
+  - name: costs_2020
+    url: https://raw.githubusercontent.com/PyPSA/technology-data/v0.15.0/outputs/costs_2020.csv
+    filename: costs_2020.csv
+    source_period: '2020'
+    content: csv
+    required_columns: [technology, parameter, value, unit, source]
+  - name: costs_2030
+    url: https://raw.githubusercontent.com/PyPSA/technology-data/v0.15.0/outputs/costs_2030.csv
+    filename: costs_2030.csv
+    source_period: '2030'
+    content: csv
+    required_columns: [technology, parameter, value, unit, source]
+  - name: costs_2040
+    url: https://raw.githubusercontent.com/PyPSA/technology-data/v0.15.0/outputs/costs_2040.csv
+    filename: costs_2040.csv
+    source_period: '2040'
+    content: csv
+    required_columns: [technology, parameter, value, unit, source]
+  - name: costs_2050
+    url: https://raw.githubusercontent.com/PyPSA/technology-data/v0.15.0/outputs/costs_2050.csv
+    filename: costs_2050.csv
+    source_period: '2050'
+    content: csv
+    required_columns: [technology, parameter, value, unit, source]

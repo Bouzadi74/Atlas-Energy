@@ -1,0 +1,48 @@
+version: 1
+comparison_model_years: [2020, 2030, 2040, 2050]
+technology_mappings:
+  - canonical_name: biomass
+    pypsa_technology: biomass
+    zenodo_names: [Biomass Power Plant]
+  - canonical_name: coal
+    pypsa_technology: coal
+    zenodo_names: [Coal Power Plant]
+  - canonical_name: geothermal
+    pypsa_technology: geothermal
+    zenodo_names: [Geothermal Power Plant, Geothermal]
+  - canonical_name: oil
+    pypsa_technology: oil
+    zenodo_names: [Light Fuel Oil Power Plant]
+  - canonical_name: gas_ccgt
+    pypsa_technology: CCGT
+    zenodo_names: [Gas Power Plant (CCGT)]
+  - canonical_name: gas_scgt
+    pypsa_technology: OCGT
+    zenodo_names: [Gas Power Plant (SCGT)]
+  - canonical_name: solar_utility
+    pypsa_technology: solar-utility
+    zenodo_names: [Solar PV (Utility), Solar PV]
+  - canonical_name: concentrating_solar
+    pypsa_technology: csp-tower
+    zenodo_names: [CSP with Storage, CSP]
+  - canonical_name: hydropower
+    pypsa_technology: hydro
+    zenodo_names:
+      - Large Hydropower Plant (Dam) (>100MW)
+      - Medium Hydropower Plant (10-100MW)
+      - Small Hydropower Plant (<10MW)
+  - canonical_name: onshore_wind
+    pypsa_technology: onwind
+    zenodo_names: [Onshore Wind]
+  - canonical_name: offshore_wind
+    pypsa_technology: offwind
+    zenodo_names: [Offshore Wind]
+  - canonical_name: electrolysis
+    pypsa_technology: electrolysis
+    zenodo_names: [PEM Electrolyzer]
+  - canonical_name: fuel_cell
+    pypsa_technology: fuel cell
+    zenodo_names: [PEM Fuel Cell]
+  - canonical_name: battery_storage
+    pypsa_technology: battery storage
+    zenodo_names: [Lithium Ion Battery, Lithium-Ion Battery]

@@ -1,0 +1,22 @@
+version: 1
+source_id: anre
+name: ANRE Annual Reports
+publisher: Autorité Nationale de Régulation de l'Electricité
+category: report
+landing_page: https://anre.ma/publications/rapports-annuels/
+formats: [pdf]
+bronze_prefix: reports/anre
+access:
+  mode: curated_urls
+  automated: true
+  authentication: none
+  notes: Prefer official French editions and preserve original PDFs unchanged.
+coverage:
+  geography: Morocco
+  period: All available reports through 2024
+  cadence: Monthly publication check
+license:
+  name: Publisher terms
+  url: https://anre.ma/
+  attribution_required: true
+  usage: Academic quotation and extraction with report-level citation.

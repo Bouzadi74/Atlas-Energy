@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atlas-energy.local/schemas/telemetry-v1.schema.json",
+  "title": "Atlas synthetic telemetry event v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "event_type", "schema_version", "event_time", "producer", "key", "trace_id", "payload"],
+  "properties": {
+    "event_id": {"type": "string", "format": "uuid"},
+    "event_type": {"const": "telemetry.sample"},
+    "schema_version": {"const": 1},
+    "event_time": {"type": "string", "format": "date-time"},
+    "producer": {"const": "atlas-demo"},
+    "key": {"type": "string", "minLength": 1},
+    "trace_id": {"type": "string", "minLength": 1},
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "asset_id", "metric", "value", "unit", "provenance_classification"],
+      "properties": {
+        "source_id": {"const": "atlas-synthetic-demo"},
+        "asset_id": {"type": "string", "minLength": 1},
+        "metric": {"enum": ["generation_mw", "demand_mw", "state_of_charge_mwh"]},
+        "value": {"type": "number", "minimum": 0},
+        "unit": {"enum": ["MW", "MWh"]},
+        "provenance_classification": {"const": "SYNTHETIC"}
+      }
+    }
+  }
+}

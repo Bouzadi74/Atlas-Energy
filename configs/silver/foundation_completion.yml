@@ -1,0 +1,77 @@
+version: silver-foundation-v1
+weather:
+  years: [2020, 2021, 2022, 2023, 2024]
+  canonical_source: NASA POWER
+  comparison_source: Open-Meteo ERA5
+demand:
+  year: 2024
+  annual_energy_metric_id: onee_net_energy_called
+  peak_power_metric_id: onee_peak_power
+  peak_day_energy_metric_id: onee_max_daily_energy
+  calibration_tolerance_mwh: 0.01
+  provenance_classification: SYNTHETIC_CALIBRATED
+  method_version: morocco-demand-shape-v1
+  method_description: >-
+    Deterministic calendar and national-temperature shape calibrated exactly to ONEE annual
+    called energy, annual peak power, and maximum-day energy. It is not observed hourly demand.
+statistics:
+  relative_tolerance_percent: 1.0
+technology:
+  source_policy: >-
+    Use internally consistent PyPSA technology-data values as canonical generic assumptions.
+    Morocco-specific Zenodo values remain comparison evidence until currency and price-year
+    conversions are supported by separately governed public indices.
+  model_years: [2020, 2030, 2040, 2050]
+  parameters: [investment, FOM, VOM, efficiency, lifetime, CO2 intensity]
+  technologies:
+    - canonical_name: solar_utility
+      pypsa_technology: solar-utility
+      component_type: Generator
+      carrier: solar
+    - canonical_name: onshore_wind
+      pypsa_technology: onwind
+      component_type: Generator
+      carrier: onshore_wind
+    - canonical_name: offshore_wind
+      pypsa_technology: offwind
+      component_type: Generator
+      carrier: offshore_wind
+    - canonical_name: gas_ccgt
+      pypsa_technology: CCGT
+      component_type: Generator
+      carrier: gas
+    - canonical_name: gas_ocgt
+      pypsa_technology: OCGT
+      component_type: Generator
+      carrier: gas
+    - canonical_name: coal
+      pypsa_technology: coal
+      component_type: Generator
+      carrier: coal
+    - canonical_name: oil
+      pypsa_technology: oil
+      component_type: Generator
+      carrier: oil
+    - canonical_name: hydro
+      pypsa_technology: hydro
+      component_type: StorageUnit
+      carrier: hydro
+    - canonical_name: battery_inverter
+      pypsa_technology: battery inverter
+      component_type: Link
+      carrier: battery
+    - canonical_name: battery_storage
+      pypsa_technology: battery storage
+      component_type: Store
+      carrier: battery
+    - canonical_name: electrolysis
+      pypsa_technology: electrolysis
+      component_type: Link
+      carrier: hydrogen
+    - canonical_name: fuel_cell
+      pypsa_technology: fuel cell
+      component_type: Link
+      carrier: hydrogen
+optimizer_inputs:
+  weather_year: 2024
+  renewable_aggregation: equal_weight_across_representative_locations

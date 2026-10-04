@@ -1,0 +1,2 @@
+"""FastAPI product boundary."""
+

@@ -1,0 +1,22 @@
+version: 1
+source_id: onee
+name: ONEE Annual Reports and Electricity Statistics
+publisher: Office National de l'Electricité et de l'Eau Potable
+category: report
+landing_page: https://www.one.org.ma/FR/pages/interne.asp?esp=2&id1=10&id2=73&t2=1
+formats: [pdf]
+bronze_prefix: reports/onee
+access:
+  mode: curated_urls
+  automated: true
+  authentication: none
+  notes: Only approved French report URLs are downloaded; no broad site crawling.
+coverage:
+  geography: Morocco
+  period: 2010-2024 or latest available
+  cadence: Monthly publication check
+license:
+  name: Publisher terms
+  url: https://www.one.org.ma/
+  attribution_required: true
+  usage: Academic quotation and extraction with report-level citation.

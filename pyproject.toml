@@ -1,0 +1,85 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "atlas-energy"
+version = "0.1.0"
+description = "Morocco energy-transition decision platform"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "alembic>=1.20.0",
+  "confluent-kafka>=2.15,<3",
+  "fastapi>=0.115,<1",
+  "prometheus-client>=0.21,<1",
+  "psycopg[binary]>=3.3.6",
+  "pydantic-settings>=2.7,<3",
+  "pyyaml>=6.0,<7",
+  "sqlalchemy>=2.0.54",
+  "uvicorn[standard]>=0.34,<1",
+]
+
+[project.scripts]
+atlas-outbox-publisher = "atlas.events.outbox_publisher:main"
+atlas-scenario-worker = "atlas.workers.scenario_worker:main"
+atlas-ingest-nasa-power = "atlas.ingestion.nasa_power:main"
+atlas-ingest-open-meteo = "atlas.ingestion.open_meteo:main"
+atlas-ingest-world-bank = "atlas.ingestion.world_bank:main"
+atlas-ingest-files = "atlas.ingestion.file_sources:main"
+atlas-register-bronze = "atlas.ingestion.register_file:main"
+atlas-audit-bronze = "atlas.ingestion.audit:main"
+atlas-build-weather-silver = "atlas.transforms.weather_silver:main"
+atlas-build-structured-silver = "atlas.transforms.structured_silver:main"
+atlas-build-report-silver = "atlas.transforms.report_silver:main"
+atlas-build-zenodo-silver = "atlas.transforms.zenodo_technoeconomic:main"
+atlas-complete-silver = "atlas.transforms.silver_completion:main"
+atlas-build-renewable-features = "atlas.features.renewable_profiles:main"
+atlas-build-model-inputs = "atlas.model_inputs.package:main"
+atlas-optimize = "atlas.optimization.engine:main"
+atlas-publish-results = "atlas.optimization.publication:main"
+atlas-stream-telemetry = "atlas.transforms.telemetry_stream:main"
+atlas-publish-demo-telemetry = "atlas.events.demo_telemetry:main"
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.28,<1",
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<8",
+  "ruff>=0.9,<1",
+]
+data = [
+  "delta-spark>=4,<5",
+  "pandas>=2.2,<3",
+  "openpyxl>=3.1,<4",
+  "pyarrow>=19,<23",
+  "pdfplumber>=0.11,<1",
+  "pypdf>=5,<7",
+  "pyxlsb>=1.0.10,<2",
+  "pyspark>=4,<5",
+  "pvlib>=0.16,<0.17",
+  "windpowerlib>=0.2.2,<0.3",
+]
+optimization = [
+    "highspy>=1.15,<2",
+    "pyarrow>=19,<23",
+    "pypsa>=1.2.4,<1.3",
+]
+analytics = [
+    "dbt-postgres>=1.11,<1.12",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/atlas"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [".uv-cache", "tmp"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

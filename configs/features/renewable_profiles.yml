@@ -1,0 +1,20 @@
+version: renewable-profiles-v2-pvlib-windpowerlib
+provenance_classification: SYNTHETIC
+description: >-
+  Transparent MVP conversion from NASA POWER weather variables to normalized renewable
+  availability. These profiles are engineering assumptions and are not measured plant output.
+solar:
+  reference_irradiance_wh_m2: 1000.0
+  system_loss_fraction: 0.14
+  temperature_coefficient_per_c: -0.004
+  reference_cell_temperature_c: 25.0
+  sapm_temperature_a: -3.56
+  sapm_temperature_b: -0.075
+  sapm_delta_temperature_c: 3.0
+wind:
+  source_height_m: 50.0
+  hub_height_m: 100.0
+  shear_exponent: 0.14
+  cut_in_speed_m_s: 3.0
+  rated_speed_m_s: 12.0
+  cut_out_speed_m_s: 25.0

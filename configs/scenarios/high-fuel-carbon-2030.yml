@@ -1,0 +1,16 @@
+name: High Fuel and Carbon 2030
+planning_year: 2030
+weather_year: 2024
+demand_growth: 0.03
+gas_price_eur_mwh_th: 110.0
+carbon_price_eur_t: 120.0
+renewable_generation_min: 0.50
+battery_capex_multiplier: 1.0
+solar_capex_multiplier: 1.0
+wind_capex_multiplier: 1.0
+provenance:
+  classification: ASSUMPTION
+  version: "1.0"
+  note: >-
+    Academic economic-sensitivity case isolating higher gas and carbon prices relative to the
+    2030 baseline. It is not a price forecast.

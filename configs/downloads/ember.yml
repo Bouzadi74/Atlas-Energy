@@ -1,0 +1,9 @@
+version: 1
+source_id: ember
+assets:
+  - name: yearly_electricity_global
+    url: https://files.ember-energy.org/public-downloads/yearly_full_release_long_format.csv
+    filename: yearly_full_release_long_format.csv
+    source_period: full_history
+    content: csv
+    required_columns: [Area, Year]

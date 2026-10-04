@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atlas-energy.local/schemas/scenario-completed-v1.schema.json",
+  "title": "Atlas scenario completed event v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "event_type", "schema_version", "event_time", "producer", "key", "trace_id", "payload"],
+  "properties": {
+    "event_id": {"type": "string", "format": "uuid"},
+    "event_type": {"const": "scenario.completed"},
+    "schema_version": {"const": 1},
+    "event_time": {"type": "string", "format": "date-time"},
+    "producer": {"const": "atlas-scenario-worker"},
+    "key": {"type": "string", "minLength": 1},
+    "trace_id": {"type": "string", "format": "uuid"},
+    "payload": {
+      "type": "object",
+      "required": ["scenario_id", "job_id", "optimizer_run_id"],
+      "additionalProperties": false,
+      "properties": {
+        "scenario_id": {"type": "string", "minLength": 1},
+        "job_id": {"type": "string", "minLength": 1},
+        "optimizer_run_id": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

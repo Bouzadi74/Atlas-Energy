@@ -1,0 +1,22 @@
+version: 1
+source_id: owid
+name: Our World in Data Energy Dataset
+publisher: Our World in Data
+category: statistics
+landing_page: https://github.com/owid/energy-data
+formats: [csv, xlsx, json]
+bronze_prefix: statistics/owid
+access:
+  mode: direct_download
+  automated: true
+  authentication: none
+  notes: Acquire the complete energy CSV and codebook; retain upstream source licenses.
+coverage:
+  geography: Global dataset filtered to Morocco in Silver
+  period: Full source history; Silver target 2010-2024
+  cadence: Monthly
+license:
+  name: CC BY 4.0 plus upstream third-party terms
+  url: https://ourworldindata.org/how-to-use-our-world-in-data
+  attribution_required: true
+  usage: Cite OWID and each underlying third-party source used.

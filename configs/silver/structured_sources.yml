@@ -1,0 +1,19 @@
+version: 1
+country_code: MAR
+start_year: 2010
+end_year: 2024
+owid_metrics:
+  - population
+  - gdp
+  - electricity_demand
+  - electricity_generation
+  - fossil_electricity
+  - renewables_electricity
+  - solar_electricity
+  - wind_electricity
+  - hydro_electricity
+  - net_elec_imports
+  - greenhouse_gas_emissions
+  - carbon_intensity_elec
+  - renewables_share_elec
+technology_model_years: [2020, 2030, 2040, 2050]

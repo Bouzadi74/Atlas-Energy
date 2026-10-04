@@ -1,0 +1,51 @@
+version: atlas-national-optimization-v1
+model_version: pypsa-national-node-v1
+currency: EUR_2025
+discount_rate: 0.07
+solver_name: highs
+
+reliability:
+  load_shedding_penalty_eur_mwh: 10000.0
+  maximum_unmet_demand_share: 0.0001
+
+imports:
+  capacity_mw: 2500.0
+  marginal_cost_eur_mwh: 90.0
+  emissions_tco2_mwh: 0.35
+
+thermal:
+  coal_fuel_eur_mwh_th: 20.0
+  oil_fuel_eur_mwh_th: 75.0
+  bioenergy_marginal_cost_eur_mwh: 85.0
+  bioenergy_emissions_tco2_mwh: 0.0
+  gas_emissions_tco2_mwh_th: 0.202
+
+storage:
+  battery_duration_hours: 4.0
+  battery_max_power_mw: 10000.0
+  pumped_hydro_duration_hours: 6.0
+  pumped_hydro_charge_efficiency: 0.90
+  pumped_hydro_discharge_efficiency: 0.90
+
+hydro:
+  reservoir_duration_hours: 24.0
+  annual_generation_budget_mwh: 321000.0
+  dispatch_efficiency: 0.90
+
+expansion:
+  solar_max_new_mw: 30000.0
+  wind_max_new_mw: 25000.0
+  gas_ccgt_max_new_mw: 10000.0
+  gas_ocgt_max_new_mw: 5000.0
+
+modeling_policy:
+  demand_growth_method: compound_from_weather_year
+  csp_profile: aggregate_existing_csp_with_solar_pv_profile
+  bioenergy_policy: fixed_capacity_with_configured_marginal_cost
+  hydro_policy: fixed_reservoir_capacity_with_flat_inflow_and_annual_energy_budget
+  pumped_hydro_policy: fixed_power_capacity_and_configured_duration
+  battery_policy: extendable_storage_unit_with_fixed_duration_and_cyclic_soc
+  imports_policy: fixed_capacity_dispatchable_generator
+  note: >-
+    This is a transparent national-node MVP. It does not represent unit commitment, reserves,
+    transmission constraints, plant-level outages, or measured hourly utility operations.

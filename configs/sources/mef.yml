@@ -1,0 +1,22 @@
+version: 1
+source_id: mef
+name: MEF Economic, Public Enterprise, and Investment Reports
+publisher: Ministère de l'Economie et des Finances du Maroc
+category: report
+landing_page: https://www.finances.gov.ma/fr/pages/detail-actualite.aspx?fiche=7406
+formats: [pdf]
+bronze_prefix: reports/mef
+access:
+  mode: curated_urls
+  automated: true
+  authentication: none
+  notes: Scope is the economic and financial, public-enterprise, and investment reports.
+coverage:
+  geography: Morocco
+  period: 2010-2024 or latest available
+  cadence: Monthly publication check
+license:
+  name: Publisher terms
+  url: https://www.finances.gov.ma/
+  attribution_required: true
+  usage: Academic quotation and extraction with report-level citation.

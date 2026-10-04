@@ -1,0 +1,61 @@
+version: 1
+scope: morocco_representative_energy_zones
+description: >-
+  Representative weather points for a zonal Morocco energy-system MVP. These points are a
+  modeling approximation, not a legal or administrative boundary dataset.
+locations:
+  - id: tangier
+    name: Tangier
+    zone: north_strait
+    latitude: 35.7595
+    longitude: -5.8340
+  - id: oujda
+    name: Oujda
+    zone: east
+    latitude: 34.6814
+    longitude: -1.9086
+  - id: rabat
+    name: Rabat
+    zone: north_atlantic
+    latitude: 34.0209
+    longitude: -6.8416
+  - id: casablanca
+    name: Casablanca
+    zone: central_load
+    latitude: 33.5731
+    longitude: -7.5898
+  - id: midelt
+    name: Midelt
+    zone: atlas_interior
+    latitude: 32.6806
+    longitude: -4.7369
+  - id: marrakech
+    name: Marrakech
+    zone: central_interior
+    latitude: 31.6295
+    longitude: -7.9811
+  - id: ouarzazate
+    name: Ouarzazate
+    zone: southeast_solar
+    latitude: 30.9335
+    longitude: -6.9370
+  - id: agadir
+    name: Agadir
+    zone: southwest_atlantic
+    latitude: 30.4278
+    longitude: -9.5981
+  - id: tarfaya
+    name: Tarfaya
+    zone: south_atlantic_wind
+    latitude: 27.9392
+    longitude: -12.9260
+  - id: laayoune
+    name: Laayoune
+    zone: south_coastal
+    latitude: 27.1253
+    longitude: -13.1625
+  - id: dakhla
+    name: Dakhla
+    zone: far_south_coastal
+    latitude: 23.6848
+    longitude: -15.9580

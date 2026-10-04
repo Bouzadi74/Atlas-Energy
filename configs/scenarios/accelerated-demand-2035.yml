@@ -1,0 +1,16 @@
+name: Accelerated Demand 2035
+planning_year: 2035
+weather_year: 2024
+demand_growth: 0.055
+gas_price_eur_mwh_th: 65.0
+carbon_price_eur_t: 50.0
+renewable_generation_min: 0.50
+battery_capex_multiplier: 1.0
+solar_capex_multiplier: 1.0
+wind_capex_multiplier: 1.0
+provenance:
+  classification: ASSUMPTION
+  version: "1.0"
+  note: >-
+    Academic demand-sensitivity case that holds baseline policy, fuel, carbon, and technology-cost
+    assumptions constant while increasing annual demand growth. It is not an official forecast.

@@ -1,0 +1,22 @@
+version: 1
+source_id: ember
+name: Ember Yearly Electricity Data
+publisher: Ember
+category: statistics
+landing_page: https://ember-energy.org/data/yearly-electricity-data/
+formats: [csv]
+bronze_prefix: statistics/ember
+access:
+  mode: direct_download
+  automated: true
+  authentication: none
+  notes: Primary electricity-history source; avoid double counting its copy within OWID.
+coverage:
+  geography: Global dataset filtered to Morocco in Silver
+  period: Full source history; Silver target 2010-2024
+  cadence: Monthly
+license:
+  name: CC BY 4.0
+  url: https://ember-energy.org/creative-commons/
+  attribution_required: true
+  usage: Academic use with Ember attribution.

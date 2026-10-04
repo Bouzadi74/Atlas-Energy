@@ -1,0 +1,11 @@
+version: telemetry-v1
+topic: atlas.telemetry.v1
+schema_version: 1
+allowed_producers:
+  - atlas-demo
+allowed_source_ids:
+  - atlas-synthetic-demo
+allowed_provenance:
+  - SYNTHETIC
+watermark: 24 hours
+max_offsets_per_trigger: 1000

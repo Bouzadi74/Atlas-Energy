@@ -1,0 +1,14 @@
+version: 1
+country_code: MAR
+start_year: 2010
+end_year: 2024
+indicators:
+  - {code: SP.POP.TOTL, name: Population, unit: people}
+  - {code: NY.GDP.MKTP.CD, name: GDP current US dollars, unit: current_USD}
+  - {code: NY.GDP.MKTP.KD.ZG, name: GDP growth annual percent, unit: percent}
+  - {code: SP.URB.TOTL.IN.ZS, name: Urban population percent, unit: percent}
+  - {code: EG.ELC.ACCS.ZS, name: Access to electricity percent, unit: percent}
+  - {code: EG.USE.ELEC.KH.PC, name: Electric power consumption kWh per capita, unit: kWh_per_capita}
+  - {code: EG.FEC.RNEW.ZS, name: Renewable energy consumption percent, unit: percent}
+  - {code: EG.ELC.RNEW.ZS, name: Renewable electricity output percent, unit: percent}
+  - {code: EN.GHG.CO2.MT.CE.AR5, name: Carbon dioxide emissions MtCO2e AR5, unit: MtCO2e}

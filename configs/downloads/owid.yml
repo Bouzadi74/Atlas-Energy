@@ -1,0 +1,15 @@
+version: 1
+source_id: owid
+assets:
+  - name: energy_data
+    url: https://owid-public.owid.io/data/energy/owid-energy-data.csv
+    filename: owid-energy-data.csv
+    source_period: full_history
+    content: csv
+    required_columns: [country, year, iso_code]
+  - name: energy_codebook
+    url: https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-codebook.csv
+    filename: owid-energy-codebook.csv
+    source_period: current_schema
+    content: csv
+    required_columns: [column, description]

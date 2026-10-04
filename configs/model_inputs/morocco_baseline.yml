@@ -1,0 +1,82 @@
+version: morocco-model-inputs-v1
+baseline_year: 2024
+planning_year: 2030
+cost_model_year: 2030
+
+calendar:
+  baseline_hours: 8784
+  planning_hours: 8760
+  method: drop_feb29_affine_preserve_annual_energy_and_peak
+  description: >-
+    Retain the complete 8,784-hour 2024 calibration baseline. For non-leap planning scenarios,
+    remove the 24 UTC hours of 29 February, leave solar and wind capacity factors unchanged, and
+    apply one affine transformation to the remaining demand values so annual energy and annual
+    peak equal the 2024 targets. The transformed series is a planning input and does not preserve
+    the calibrated maximum-day energy constraint.
+
+capacity:
+  source_year: 2024
+  country_code: MAR
+  producer_type: On-grid electricity
+  system_total_metric_id: onee_installed_capacity
+  wind_check_metric_id: anre_wind_installed_capacity
+  renewable_check_metric_id: mef_renewable_installed_capacity
+  maximum_total_difference_percent: 1.0
+  residual_technology: fossil_other
+  residual_policy: >-
+    Preserve IRENA on-grid technology detail and allocate the difference to ONEE's reviewed
+    national total only to fossil_other. Retain raw IRENA capacity and adjustment in separate
+    columns. Off-grid capacity is excluded from the national-grid model.
+  mappings:
+    - canonical_technology: coal
+      component_type: Generator
+      carrier: coal
+      source_technology: Coal and peat
+    - canonical_technology: fossil_other
+      component_type: Generator
+      carrier: oil
+      source_technology: Fossil fuels n.e.s.
+    - canonical_technology: gas_ccgt
+      component_type: Generator
+      carrier: gas
+      source_technology: Natural gas
+    - canonical_technology: pumped_hydro
+      component_type: StorageUnit
+      carrier: pumped_hydro
+      source_technology: Pumped storage
+    - canonical_technology: bioenergy
+      component_type: Generator
+      carrier: bioenergy
+      source_technology_group: Bioenergy
+    - canonical_technology: hydro
+      component_type: StorageUnit
+      carrier: hydro
+      source_technology_group: Hydropower (excl. Pumped Storage)
+    - canonical_technology: solar_utility
+      component_type: Generator
+      carrier: solar
+      source_sub_technology: On-grid Solar photovoltaic
+    - canonical_technology: solar_csp
+      component_type: Generator
+      carrier: solar_csp
+      source_sub_technology: Concentrated solar power
+    - canonical_technology: onshore_wind
+      component_type: Generator
+      carrier: onshore_wind
+      source_sub_technology: Onshore wind energy
+
+technology:
+  required_parameters_by_technology:
+    solar_utility: [investment, FOM, lifetime]
+    onshore_wind: [investment, FOM, VOM, lifetime]
+    gas_ccgt: [investment, FOM, VOM, efficiency, lifetime]
+    gas_ocgt: [investment, FOM, VOM, efficiency, lifetime]
+    coal: [investment, FOM, VOM, efficiency, lifetime, CO2 intensity]
+    oil: [investment, FOM, VOM, efficiency, lifetime, CO2 intensity]
+    hydro: [investment, FOM, efficiency, lifetime]
+    battery_inverter: [investment, FOM, efficiency, lifetime]
+    battery_storage: [investment, lifetime]
+  selection_policy: >-
+    Use the canonical PyPSA technology-data assumptions for the planning year. Existing-only
+    technologies may remain in the capacity table without being expandable until a complete,
+    governed cost and operating contract is added.

@@ -1,0 +1,22 @@
+version: 1
+source_id: nasa_power
+name: NASA POWER Hourly API
+publisher: NASA Langley Research Center
+category: weather
+landing_page: https://power.larc.nasa.gov/docs/services/api/temporal/hourly/
+formats: [json]
+bronze_prefix: nasa_power
+access:
+  mode: api
+  automated: true
+  authentication: none
+  notes: Point-based hourly renewable-energy meteorology in UTC.
+coverage:
+  geography: Eleven representative Moroccan energy zones
+  period: 2020-2024 acquired
+  cadence: Annual backfill, then yearly refresh
+license:
+  name: NASA open data and media usage guidelines
+  url: https://www.nasa.gov/nasa-brand-center/images-and-media/
+  attribution_required: true
+  usage: Academic use with NASA POWER attribution.

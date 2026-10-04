@@ -1,0 +1,8 @@
+delta-spark>=4,<5
+pandas>=2.2,<3
+openpyxl>=3.1,<4
+pyarrow>=19,<23
+pdfplumber>=0.11,<1
+pypdf>=5,<7
+pyxlsb>=1.0.10,<2
+pyspark>=4,<5
